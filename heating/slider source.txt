@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70%;
+  height: 30px;
+}
+
+/* Hide the unformatted switch */
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: gold;
+}
+
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  left: 0%;
+  bottom: 0%;
+  background-color: dimgray;
+  -webkit-transition: 6s;
+  transition: 6s;
+}
+
+// input:checked + .slider {
+//   background-color: gold;
+// }
+
+
+// input:focus + .slider {
+//  box-shadow: 0 0 4px #2196F3;
+// }
+
+
+
+input:checked ~ .slider:before {
+  -webkit-transform: translate(50%, 0) scale(0, 1);
+  -ms-transform: translate(50%, 0) scale(0, 1);
+  transform: translate(50%, 0) scale(0, 1);
+
+}
+
+
+/* Container for the switch and text */
+.container {
+  position: relative;
+  text-align: center;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:white;
+  font-weight: normal;
+}
+
+
+input:checked ~ .centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color:black;
+  font-weight: bold;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<h2>Toggle Switch</h2>
+
+
+<div class="container">
+  <label class="switch">
+    <input type="checkbox">
+    <span class="slider"></span>
+    <span class="centered">Bedroom</span>
+  </label>
+</div>
+
+
+<p>
+
+<div class="container">
+  <label class="switch">
+    <input type="checkbox" checked>
+    <span class="slider"></span>
+    <span class="centered">Dressing room</span>
+  </label>
+</div>
+
+
+
+</body>
+</html> 
